@@ -1,8 +1,9 @@
 dictionary = {
     "02001":{
    'name1' : 'cristy',
-   'passq' : '0808',
-   'money' : 777
+   'passw' : '0808',
+   'money' : 777,
+   "status": 0
 }
 }
 person = {"name": "cristy", "money": 777, "PIN": "1"}
@@ -30,10 +31,10 @@ if name == 's':
     name = input("Пожалуйста, введите номер вашей карты:")
     if name in dictionary:
         for i in range(1):
-            name = input("Пожалуйста, введите свой пароль:")
-        if name == dictionary[name]['password']:
+            oil = input("Пожалуйста, введите свой пароль:")
+        if oil == dictionary[name]['passw']:
             if dictionary[name]['status'] == 1:
-                print('Пользователь былзаморожен, пожалуйста, найдитесотрудника для размораживания!')
+                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
     #print(name + 'Счет успешно открыт!')
 #def fun2(password):
 #    if PIN != 2001:
