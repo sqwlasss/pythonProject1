@@ -16,26 +16,29 @@ key = ""
 print("Aвторизация, key ""s")
 print("Выход, key ""f""'")
 name = input('chose your option pls  ')
-if name == 's':
-    name = input('your name is  ')
-    print(name)
-if name == 'f':
-    exit()
+#if name == 's':
+#    name = input('your name is  ')
+#    print(name)
+#if name == 'f':
+#    exit()
 #elif key != "s, f":
 #    pass
-if name != 'cristy':
-    print("try again please")
-if name == 'cristy':
- if name == 's':
+#if name == 'cristy':
+#    print("try again please")
+if name == 's':
 #    name = input('input your PIN ')
     name = input("Пожалуйста, введите номер вашей карты:")
     if name in dictionary:
-        for i in range(3):
-            print("Пожалуйста, введите свой пароль:")
+        for i in range(1):
+            name = input("Пожалуйста, введите свой пароль:")
+        if name == dictionary[name]['password']:
+            if dictionary[name]['status'] == 1:
+                print('Пользователь былзаморожен, пожалуйста, найдитесотрудника для размораживания!')
     #print(name + 'Счет успешно открыт!')
 def fun2(password):
     if PIN != 2001:
      abc = input('press enter to return')
+
 
     return
 def fun1(qwerty):
