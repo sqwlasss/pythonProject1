@@ -1,7 +1,9 @@
 dictionary = {
+    "02001":{
    'name1' : 'cristy',
-   'PIN' : '2001',
+   'passq' : '0808',
    'money' : 777
+}
 }
 person = {"name": "cristy", "money": 777, "PIN": "1"}
 PIN = 2001
@@ -17,14 +19,20 @@ name = input('chose your option pls  ')
 if name == 's':
     name = input('your name is  ')
     print(name)
-elif key != "s, f":
-    pass
+if name == 'f':
+    exit()
+#elif key != "s, f":
+#    pass
 if name != 'cristy':
     print("try again please")
 if name == 'cristy':
  if name == 's':
-    name = input('input you PIN ')
-    print(name + 'Счет успешно открыт!')
+#    name = input('input your PIN ')
+    name = input("Пожалуйста, введите номер вашей карты:")
+    if name in dictionary:
+        for i in range(3):
+            print("Пожалуйста, введите свой пароль:")
+    #print(name + 'Счет успешно открыт!')
 def fun2(password):
     if PIN != 2001:
      abc = input('press enter to return')
