@@ -35,14 +35,14 @@ if name == 's':
             if dictionary[name]['status'] == 1:
                 print('Пользователь былзаморожен, пожалуйста, найдитесотрудника для размораживания!')
     #print(name + 'Счет успешно открыт!')
-def fun2(password):
-    if PIN != 2001:
-     abc = input('press enter to return')
+#def fun2(password):
+#    if PIN != 2001:
+ #    abc = input('press enter to return')
 
 
-    return
-def fun1(qwerty):
-    pass
+#    return
+#def fun1(qwerty):
+ #   pass
 
 
 
