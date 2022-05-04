@@ -6,6 +6,8 @@ dictionary = {
    "status": 0
 }
 }
+client = []
+#client.append('person')
 person = {"name": "cristy", "money": 777, "PIN": "1"}
 PIN = 2001
 a = input("write your name please:")
@@ -40,10 +42,18 @@ if name == 's':
 abc = input('1.add money \n 2.give money')
 if abc == '+':
     money = int(input("how much to add?>"))
-    person["money"] = person["money"] + money
-if key == "-":
-        money = int(input("how much to add?>"))
-        person["money"] = person["money"] - money
+    dictionary["money"] = dictionary["money"] + money
+else:
+ rint('succesefuly gived')
+ if abc == "-":
+        money = int(input("how much to give?>"))
+        dictionary["money"] = dictionary["money"] - money
+if key == "*":
+    money = int(input("how much to share?>"))
+    if client[0]["money"] >= money:
+                client[0]["money"] = client[0]["money"] - money
+                client[1]["money"] = client[1]["money"] + money
+        abcdee = input('press 6 to vew your currect balance')
 
 
 
