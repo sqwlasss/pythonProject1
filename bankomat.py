@@ -33,9 +33,22 @@ if name == 's':
         for i in range(1):
             oil = input("Пожалуйста, введите свой пароль:")
         if oil == dictionary[name]['passw']:
-            if dictionary[name]['status'] == 1:
-                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
-    #print(name + 'Счет успешно открыт!')
+            print('Успешный вход!')
+#            if dictionary[name]['status'] == 1:
+#                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
+#            exit(0)
+abc = input('1.add money \n 2.give money')
+if abc == '+':
+    money = int(input("how much to add?>"))
+    person["money"] = person["money"] + money
+if key == "-":
+        money = int(input("how much to add?>"))
+        person["money"] = person["money"] - money
+
+
+
+
+#print(name + 'Счет успешно открыт!')
 #def fun2(password):
 #    if PIN != 2001:
  #    abc = input('press enter to return')
