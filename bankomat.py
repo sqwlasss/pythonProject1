@@ -44,7 +44,7 @@ if abc == '+':
     money = int(input("how much to add?>"))
     dictionary["money"] = dictionary["money"] + money
 else:
- rint('succesefuly gived')
+ print('succesefuly gived')
  if abc == "-":
         money = int(input("how much to give?>"))
         dictionary["money"] = dictionary["money"] - money
