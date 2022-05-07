@@ -39,7 +39,7 @@ if name == 's':
 #            if dictionary[name]['status'] == 1:
 #                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
 #            exit(0)
-abc = input('1.add money\n2.give money')
+abc = input('1.add money\n2.give money\n ')
 if abc == '+':
     money = int(input("how much to add?> "))
     dictionary['money'] = dictionary['money'] + money
