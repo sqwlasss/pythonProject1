@@ -39,10 +39,10 @@ if name == 's':
 #            if dictionary[name]['status'] == 1:
 #                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
 #            exit(0)
-abc = input('1.add money \n 2.give money')
+abc = input('1.add money\n2.give money')
 if abc == '+':
-    money = int(input("how much to add?>"))
-    dictionary["money"] = dictionary["money"] + money
+    money = int(input("how much to add?> "))
+    dictionary['money'] = dictionary['money'] + money
 else:
  print('succesefuly gived')
  if abc == "-":
@@ -51,9 +51,14 @@ else:
 if key == "*":
     money = int(input("how much to share?>"))
     if client[0]["money"] >= money:
-                client[0]["money"] = client[0]["money"] - money
-                client[1]["money"] = client[1]["money"] + money
+        client[0]["money"] = client[0]["money"] - money
+        client[1]["money"] = client[1]["money"] + money
+    else:
         abcdee = input('press 6 to vew your currect balance')
+    if abcdee == "6":
+        print('a')
+    elif abcdee != '6':
+            exit()
 
 
 
