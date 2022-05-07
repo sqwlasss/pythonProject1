@@ -1,3 +1,5 @@
+import random
+
 dictionary = {
     "02001":{
    'name1' : 'cristy',
@@ -6,6 +8,13 @@ dictionary = {
    "status": 0
 }
 }
+dictionary1 = {
+   'name1' : 'cristy',
+   'passw' : '0808',
+   'money' : 777,
+    'pin' : '02001'
+}
+
 client = []
 #client.append('person')
 person = {"name": "cristy", "money": 777, "PIN": "1"}
@@ -42,7 +51,9 @@ if name == 's':
 abc = input('1.add money\n2.give money\n ')
 if abc == '+':
     money = int(input("how much to add?> "))
-    dictionary['money'] = dictionary['money'] + money
+    if money == (random.randrange(1, 999)):
+        print(dictionary1['money'])
+        dictionary1['money'] = dictionary1['money'] + money
 else:
  print('succesefuly gived')
  if abc == "-":
