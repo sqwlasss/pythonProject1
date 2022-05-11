@@ -1,4 +1,5 @@
 import random
+import time
 
 dictionary = {
     "02001":{
@@ -39,24 +40,35 @@ name = input('chose your option pls  ')
 #    print("try again please")
 if name == 's':
 #    name = input('input your PIN ')
-    name = input("Пожалуйста, введите номер вашей карты:")
-    if name in dictionary:
+    pin = input("Пожалуйста, введите номер вашей карты:")
+    if pin in dictionary:
+        x = dictionary1.get('pin')
+        if pin == dictionary[name]['pin']:
+            print('correct')
         for i in range(1):
             oil = input("Пожалуйста, введите свой пароль:")
         if oil == dictionary[name]['passw']:
+            time.sleep(2.4)
             print('Успешный вход!')
 #            if dictionary[name]['status'] == 1:
 #                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
 #            exit(0)
 abc = input('1.add money\n2.give money\n ')
 if abc == '+':
+    x = dictionary1.get('money')
     money = int(input("how much to add?> "))
-    if money == (random.randrange(1, 999)):
-        print(dictionary1['money'])
+    if money < dictionary1['money']:
+        print(dictionary1['money']),print('your current money')
         dictionary1['money'] = dictionary1['money'] + money
 else:
  print('succesefuly gived')
- if abc == "-":
+ balance = input('wanna view you balance?')
+ if balance =='yes':
+     print(dictionary1['money'])
+ elif balance == 'no':
+    exit()
+
+if abc == "-":
         money = int(input("how much to give?>"))
         dictionary["money"] = dictionary["money"] - money
 if key == "*":
