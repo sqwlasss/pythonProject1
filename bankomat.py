@@ -43,30 +43,37 @@ if name == 's':
     pin = input("Пожалуйста, введите номер вашей карты:")
     if pin in dictionary:
         x = dictionary1.get('pin')
-        if pin == dictionary[name]['pin']:
+        if pin == dictionary1['pin']:
+            time.sleep(2)
             print('correct')
         for i in range(1):
             oil = input("Пожалуйста, введите свой пароль:")
-        if oil == dictionary[name]['passw']:
+        if oil == dictionary1['passw']:
             time.sleep(2.4)
             print('Успешный вход!')
 #            if dictionary[name]['status'] == 1:
 #                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
 #            exit(0)
 abc = input('1.add money\n2.give money\n ')
+abc = input("select operation: + / - =")
+x = dictionary1.get('money')
 if abc == '+':
+    print('warning you cant add more than your balance')
+    time.sleep(1.1)
     x = dictionary1.get('money')
     money = int(input("how much to add?> "))
     if money < dictionary1['money']:
+        time.sleep(1.3)
         print(dictionary1['money']),print('your current money')
         dictionary1['money'] = dictionary1['money'] + money
-else:
- print('succesefuly gived')
- balance = input('wanna view you balance?')
- if balance =='yes':
-     print(dictionary1['money'])
- elif balance == 'no':
-    exit()
+        time.sleep(1)
+        print('succesefuly gived')
+balance = input('wanna view you balance?')
+if balance =='yes':
+  time.sleep(1.4)
+  print(dictionary1['money'])
+elif balance == 'no':
+   exit()
 
 if abc == "-":
         money = int(input("how much to give?>"))
