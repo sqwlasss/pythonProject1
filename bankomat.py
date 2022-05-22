@@ -12,7 +12,7 @@ dictionary = {
 dictionary1 = {
    'name1' : 'cristy',
    'passw' : '0808',
-   'money' : 777,
+   'money' : 208082008,
     'pin' : '02001'
 }
 
@@ -49,7 +49,7 @@ if name == 's':
         for i in range(1):
             oil = input("Пожалуйста, введите свой пароль:")
         if oil == dictionary1['passw']:
-            time.sleep(2.4)
+            time.sleep(1.7)
             print('Успешный вход!')
 #            if dictionary[name]['status'] == 1:
 #                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
@@ -62,19 +62,24 @@ if abc == '+':
     time.sleep(1.1)
     x = dictionary1.get('money')
     money = int(input("how much to add?> "))
-    if money < dictionary1['money']:
+    if money >= dictionary1['money']:
+        print('you cant add more than your balance, exiting...')
+        time.sleep(0.6)
+        exit()
+    elif money < dictionary1['money']:
         time.sleep(1.3)
         print(dictionary1['money']),print('your current money')
-        dictionary1['money'] = dictionary1['money'] + money
         time.sleep(1)
+        dictionary1['money'] = dictionary1['money'] + money
+        time.sleep(1.6)
         print('succesefuly gived')
+
 balance = input('wanna view you balance?')
 if balance =='yes':
-  time.sleep(1.4)
-  print(dictionary1['money'])
+                time.sleep(1.4)
+                print(dictionary1['money'])
 elif balance == 'no':
-   exit()
-
+                exit()
 if abc == "-":
         print('warning you cant give more than your balance')
         time.sleep(1)
@@ -91,12 +96,13 @@ if abc == "-":
             dictionary1["money"] = dictionary1["money"] - money
             time.sleep(1)
             print('succesefuly gived')
-cache = input('wanna view you balance???')
+'''cache = input('wanna view you balance???')
 if cache =='yes':
   time.sleep(1.4)
   print(dictionary1['money'])
 elif cache == 'no':
-   exit()
+exit()
+'''
 if key == "*":
     money = int(input("how much to share?>"))
     if client[0]["money"] >= money:
