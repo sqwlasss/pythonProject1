@@ -15,9 +15,6 @@ dictionary1 = {
    'money' : 208082008,
     'pin' : '02001'
 }
-
-client = []
-#client.append('person')
 person = {
     "name": "cristy",
     "PIN": '0201'
