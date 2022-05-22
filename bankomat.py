@@ -55,7 +55,7 @@ if name == 's':
 #                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
 #            exit(0)
 abc = input('1.add money\n2.give money\n ')
-abc = input("select operation: + / - =")
+abc = input("select operation: + - * ")
 x = dictionary1.get('money')
 if abc == '+':
     print('warning you cant add more than your balance')
@@ -76,8 +76,27 @@ elif balance == 'no':
    exit()
 
 if abc == "-":
-        money = int(input("how much to give?>"))
-        dictionary["money"] = dictionary["money"] - money
+        print('warning you cant give more than your balance')
+        time.sleep(1)
+        x = dictionary1.get('money')
+        money = int(input("how much to give?> "))
+        if money > dictionary1['money']:
+            print('you cant give more than your balance, exiting...')
+            time.sleep(0.6)
+            exit()
+        elif money <= dictionary1['money']:
+            print('well, you can give =D')
+            time.sleep(0.9)
+            print(dictionary1['money']),print('your current money')
+            dictionary1["money"] = dictionary1["money"] - money
+            time.sleep(1)
+            print('succesefuly gived')
+cache = input('wanna view you balance???')
+if cache =='yes':
+  time.sleep(1.4)
+  print(dictionary1['money'])
+elif cache == 'no':
+   exit()
 if key == "*":
     money = int(input("how much to share?>"))
     if client[0]["money"] >= money:
