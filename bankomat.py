@@ -22,17 +22,22 @@ person = {
     "name": "cristy",
     "PIN": '0201'
 }
-PIN = 2001
-a = input("write your name please:")
-b = input("PIN:")
-if a == person["name"]:
-    pass
-elif a != person["name"]:
-    exit()
-    if b == person["PIN"]:
+#PIN = 2001
+def logging():
+    a = input("write your name please:")
+    b = input("PIN:")
+    if a == person["name"]:
         pass
-    elif b != person["PIN"]:
+    elif a != person["name"]:
         exit()
+        if b == person["PIN"]:
+            pass
+        elif b != person["PIN"]:
+            exit()
+            time.sleep(0.7)
+logging()
+time.sleep(0.9)
+print('succ sess')
 # oil = input("Пожалуйста, введите выбор, который вы хотите сделать:"
 #      "\n1)Откройте счет\n2)Aвторизация\n3)Выход;")
 # z = ("Откройте счет")
@@ -68,11 +73,11 @@ def auth_exit():
     #            if dictionary[name]['status'] == 1:
     #                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
     #            exit(0)
-    if name != 's, f':
-        time.sleep(1)
-        input('wrong option, press enter to return')
-        return(auth_exit())
-    time.sleep(0.7)
+            elif name != 's, f':
+                time.sleep(1)
+                input('wrong option, press enter to return')
+                return(auth_exit())
+                time.sleep(0.7)
 auth_exit()
 abc = input('1.add money\n2.give money\n ')
 abc = input("select operation: + - * ")
