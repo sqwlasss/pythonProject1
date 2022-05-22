@@ -1,14 +1,14 @@
 import random
 import time
-
-dictionary = {
+#this was o first experimental dicionary, i don't use it in my code ༼ つ ◕_◕ ༽つ
+'''dictionary = {
     "02001":{
    'name1' : 'cristy',
    'passw' : '0808',
    'money' : 777,
    "status": 0
 }
-}
+}'''
 dictionary1 = {
    'name1' : 'cristy',
    'passw' : '0808',
@@ -38,6 +38,7 @@ def logging():
 logging()
 time.sleep(0.9)
 print('succ sess')
+time.sleep(1)
 # oil = input("Пожалуйста, введите выбор, который вы хотите сделать:"
 #      "\n1)Откройте счет\n2)Aвторизация\n3)Выход;")
 # z = ("Откройте счет")
@@ -59,17 +60,21 @@ def auth_exit():
         exit()
     if name == 's':
     #    name = input('input your PIN ')
-        pin = input("Пожалуйста, введите номер вашей карты:")
-        if pin in dictionary:
+        pin = int(input("Пожалуйста, введите номер вашей карты:"))
+        if pin in dictionary1:
             x = dictionary1.get('pin')
             if pin == dictionary1['pin']:
                 time.sleep(2)
                 print('correct')
+            if pin != dictionary1['pin']:
+                exit()
             for i in range(1):
                 oil = input("Пожалуйста, введите свой пароль:")
             if oil == dictionary1['passw']:
                 time.sleep(1.7)
                 print('Успешный вход!')
+            if oil != dictionary1['passw']:
+                exit()
     #            if dictionary[name]['status'] == 1:
     #                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
     #            exit(0)
@@ -99,15 +104,9 @@ if abc == '+':
         time.sleep(1.6)
         print('succesefuly gived')
 
-balance = input('wanna view you balance?')
-if balance =='yes':
-                time.sleep(1.4)
-                print(dictionary1['money'])
-elif balance == 'no':
-                exit()
 if abc == "-":
         print('warning you cant give more than your balance')
-        time.sleep(1)
+        time.sleep(1.3)
         x = dictionary1.get('money')
         money = int(input("how much to give?> "))
         if money > dictionary1['money']:
@@ -121,6 +120,14 @@ if abc == "-":
             dictionary1["money"] = dictionary1["money"] - money
             time.sleep(1)
             print('succesefuly gived')
+time.sleep(0.7)
+balance = input('wanna view you balance?')
+if balance == 'yes':
+                time.sleep(1.4)
+                print(dictionary1['money'])
+                time.sleep(3)
+elif balance == 'no':
+                exit()
 '''cache = input('wanna view you balance???')
 if cache =='yes':
   time.sleep(1.4)
