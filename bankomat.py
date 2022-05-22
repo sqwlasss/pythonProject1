@@ -18,42 +18,62 @@ dictionary1 = {
 
 client = []
 #client.append('person')
-person = {"name": "cristy", "money": 777, "PIN": "1"}
+person = {
+    "name": "cristy",
+    "PIN": '0201'
+}
 PIN = 2001
 a = input("write your name please:")
 b = input("PIN:")
+if a == person["name"]:
+    pass
+elif a != person["name"]:
+    exit()
+    if b == person["PIN"]:
+        pass
+    elif b != person["PIN"]:
+        exit()
 # oil = input("Пожалуйста, введите выбор, который вы хотите сделать:"
 #      "\n1)Откройте счет\n2)Aвторизация\n3)Выход;")
 # z = ("Откройте счет")
-key = ""
-print("Aвторизация, key ""s")
-print("Выход, key ""f""'")
-name = input('chose your option pls  ')
-#if name == 's':
-#    name = input('your name is  ')
-#    print(name)
-#if name == 'f':
-#    exit()
-#elif key != "s, f":
-#    pass
-#if name == 'cristy':
-#    print("try again please")
-if name == 's':
-#    name = input('input your PIN ')
-    pin = input("Пожалуйста, введите номер вашей карты:")
-    if pin in dictionary:
-        x = dictionary1.get('pin')
-        if pin == dictionary1['pin']:
-            time.sleep(2)
-            print('correct')
-        for i in range(1):
-            oil = input("Пожалуйста, введите свой пароль:")
-        if oil == dictionary1['passw']:
-            time.sleep(1.7)
-            print('Успешный вход!')
-#            if dictionary[name]['status'] == 1:
-#                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
-#            exit(0)
+def auth_exit():
+    abb = ""
+    print("Aвторизация, key ""s")
+    print("Выход, key ""f""'")
+    name = input('chose your option pls  ')
+    #if name == 's':
+    #    name = input('your name is  ')
+    #    print(name)
+    #if name == 'f':
+    #    exit()
+    #elif key != "s, f":
+    #    pass
+    #if name == 'cristy':
+    #    print("try again please")
+    if name == 'f':
+        exit()
+    if name == 's':
+    #    name = input('input your PIN ')
+        pin = input("Пожалуйста, введите номер вашей карты:")
+        if pin in dictionary:
+            x = dictionary1.get('pin')
+            if pin == dictionary1['pin']:
+                time.sleep(2)
+                print('correct')
+            for i in range(1):
+                oil = input("Пожалуйста, введите свой пароль:")
+            if oil == dictionary1['passw']:
+                time.sleep(1.7)
+                print('Успешный вход!')
+    #            if dictionary[name]['status'] == 1:
+    #                print('Пользователь был заморожен, пожалуйста, найдите сотрудника для размораживания!')
+    #            exit(0)
+    if name != 's, f':
+        time.sleep(1)
+        input('wrong option, press enter to return')
+        return(auth_exit())
+    time.sleep(0.7)
+auth_exit()
 abc = input('1.add money\n2.give money\n ')
 abc = input("select operation: + - * ")
 x = dictionary1.get('money')
@@ -103,7 +123,7 @@ if cache =='yes':
 elif cache == 'no':
 exit()
 '''
-if key == "*":
+'''if abc == "*":
     money = int(input("how much to share?>"))
     if client[0]["money"] >= money:
         client[0]["money"] = client[0]["money"] - money
@@ -114,7 +134,7 @@ if key == "*":
         print('a')
     elif abcdee != '6':
             exit()
-
+'''
 
 
 
