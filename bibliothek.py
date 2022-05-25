@@ -12,6 +12,7 @@ buy_books = []
 buy_books_index = 0
 buy_books.append({'*'})
 cycle1 = True
+choosen_of_thebook = False
 person = []
 person_index = 0
 person.append({'email': 'scebec.cristian@gmail.com', 'pass': '123321', 'balance': '65000'})
@@ -27,50 +28,88 @@ def loggin_in():
     username = input("Please enter your username: ")
     if not username in personss:
         print('Wrong email')
-        loggin_in
+        loggin_in()
         passc = input('input your password')
         person_pass = None
         for x in person:
             if username == x['email']:
                 person_pass == x['pass']
-            if not passc == ['pass']:
-                print('wrong pass')
-                loggin_in()
+        if not passc == ['pass']:
+            print('wrong pass')
+            loggin_in()
+        is_logg_in = True
 
 
-is_logg_in = True
-
-def search():
+'''def search():
     global person_index
     input('Search your book . . . ')
     search()
+'''
+
+def process_view_balance():
+    global person_index
+    print(f"Your balance is: {person[person_index]['balance']}")
+
 
 books = [name['book'] for name in buy_books]
 
-def buy_a_book():
+
+def search_a_book():
     global person_index
-    bbok = input('Search for the book.. ')
+    books = input('Search for the book.. ')
     if not book in books:
         print('we are sorry we dont have this book in our stock! ')
-        buy_a_book()
+        print('choose a book from this list ')
+
+        def list_of_books():
+            global cycle1
+            print('1. Choose an option')
+            print('2. White Fang: Myth of the White Wolf by David Fallon')
+            print('3. To Paradise by Hanya Yanagihara')
+            print('4. Trust by Hernan Diaz')
+            print('5. Fluturi by Irina Binder')
+            print('0. Exit')
+            abc = input('your choose of the book')
+            if abc == 1:
+                print('Your option: \n White Fang: Myth of the White Wolf, cost:500')
+            elif abc == 2:
+                print('Your option: \n To Paradise by Hanya Yanagihara, cost:780')
+            elif abc == 3:
+                print('Your option: \n Trust by Hernan Diaz, cost:1099')
+            elif abc == 4:
+                print('Your option: \n Fluturi by Irina Binder, cost:1209')
+            elif abc == 0:
+                cycle1 = False
+            else:
+                print('Wrong command')
+        list_of_books()
         if book in books:
-            input('choose a book from this list ')
-            buy_a_book()
+            choosen_of_thebook = True
+        search_a_book()
 
-
-
+def view_a_book():
+    print('1. White Fang')
+    print('2. Harry Potter')
+    print('3. William Wenton și Hoțul de Luridium')
+    print('4. Twenty Thousand Leagues Under the Seas')
+    abcde = input('Choose a number 1-4 to view information of that book')
+    if abcde == 1:
+        x = book.keys()
+        y = book.values()
 
 def process_menu():
     global cycle
     print('Please choose an option: ')
     print('1. Search a book ')
     print('2. Buy a book')
+    print('3. View balance')
+    print('4. View a book from current bibliothec')
     inpp = int(input('choose one'))
     if inpp == 1:
-        search()
-    if inpp == 2:
-        print
+        search_a_book()
+    elif inpp == 2:
 
-
-
+    elif inpp == 3:
+        process_view_balance()
+    elif inpp == 4:
 
