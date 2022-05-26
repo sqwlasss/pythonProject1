@@ -23,7 +23,6 @@ person = {
 def logging():
     a = input("write your name please:")
     b = input("PIN:")
-    if a == person["name"]:
         pass
     elif a != person["name"]:
         exit()

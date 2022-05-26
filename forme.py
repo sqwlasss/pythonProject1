@@ -1,0 +1,1 @@
+'''its just a file for me tu try something code (☞ﾟヮﾟ)☞           ☜(ﾟヮﾟ☜)'''
