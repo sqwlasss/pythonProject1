@@ -15,9 +15,10 @@ book4 = {
     'name': 'Twenty Thousand Leagues Under the Seas',
     'auth': 'Jules Verne',
     'desc': 'During the year 1866, ships of various nationalities sight a mysterious sea monster, which, it is later suggested, might be a gigantic narwhal.  The U.S. government assembles an expedition in New York City to find and destroy the monster. Professor Pierre Aronnax, a French marine biologist and the storys narrator, is in town at the time and receives a last-minute invitation to join the expedition; he accepts. Canadian whaler and master harpooner Ned Land and Aronnaxs faithful manservant Conseil are also among the participants.'}
-buy_books = []
+'''buy_books = []
 buy_books_index = 0
 buy_books.append({'*'})
+'''
 cycle1 = True
 choosen_of_thebook = False
 person = []
@@ -32,7 +33,7 @@ personss = [name['email'] for name in person]
 
 def loggin_in():
     global loggin_in
-    username = input("Please enter your username: ")
+    username = input("Please enter your email: ")
     if not username in personss:
         print('Wrong email')
         loggin_in()
@@ -91,11 +92,19 @@ def search_a_book():
 
 def buy_a_book():
     print('First choose one of this avaible books =D')
-    print('1. White Fang')
-    print('2. Harry Potter')
-    print('3. William Wenton și Hoțul de Luridium')
-    print('4. Twenty Thousand Leagues Under the Seas')
+    print('1. White Fang, cost:500')
+    print('2. Harry Potter, cost:780')
+    print('3. William Wenton și Hoțul de Luridium, cost:1099')
+    print('4. Twenty Thousand Leagues Under the Seas, cost:1209')
     abcde1 = input('Choose a number 1-4 to buy that book')
+    if abcde1 == 1:
+        person[person_index]['balance'] - 500
+    elif abcde1 == 2:
+        person[person_index]['balance'] - 780
+    elif abcde1 == 3:
+        person[person_index]['balance'] - 1099
+    elif abcde1 == 4:
+        person[person_index]['balance'] - 1209
 
 def view_a_book():
     print('1. White Fang')
@@ -127,3 +136,8 @@ def process_menu():
         process_view_balance()
     elif inpp == 4:
         view_a_book()
+
+while (cycle):
+    if not is_logg_in:
+        loggin_in()
+    process_menu()
