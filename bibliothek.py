@@ -3,7 +3,11 @@ book_index = 0
 book1 = {
     'name': 'White Fang',
     'author': 'Jack London',
-    'desc': 'The story begins before the wolf-dog hybrid is born, with two men and their sled dog team on a journey to deliver the coffin of Lord Alfred to a remote town named Fort McGurry in the higher area of the Yukon Territory. The men, Bill and Henry, are stalked by a large pack of starving wolves over the course of several days. Finally, after all of their dogs and Bill have been eaten, more teams find Henry escaping from the wolves; the wolf pack scatters when they hear the large group of people coming.'}
+    'desc': 'The story begins before the wolf-dog hybrid is born, with two men and their sled dog team on a journey to '
+            'deliver the coffin of Lord Alfred to a remote town named Fort McGurry in the higher area of the Yukon '
+            'Territory. The men, Bill and Henry, are stalked by a large pack of starving wolves over the course of several '
+            'days. Finally, after all of their dogs and Bill have been eaten, more teams find Henry escaping from the wolves; '
+            'the wolf pack scatters when they hear the large group of people coming.'}
 book2 = {'name': 'Harry Potter',
          'author': 'British author J. K. Rowling',
          'desc': 'the novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry. The main story arc concerns Harrys struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic and subjugate all wizards and Muggles (non-magical people).'}
@@ -32,20 +36,20 @@ personss = [name['email'] for name in person]
 
 
 def loggin_in():
-    global loggin_in
+    global is_logg_in
     username = input("Please enter your email: ")
     if not username in personss:
         print('Wrong email')
         loggin_in()
-        passc = input('input your password')
-        person_pass = None
-        for x in person:
-            if username == x['email']:
-                person_pass == x['pass']
-        if not passc == ['pass']:
-            print('wrong pass')
-            loggin_in()
-        is_logg_in = True
+    passc = input('input your password')
+    person_pass = None
+    for x in person:
+        if username == x['email']:
+            person_pass = x['pass']
+    if not passc == person_pass:
+        print('wrong pass')
+        loggin_in()
+    is_logg_in = True
 
 
 def process_view_balance():
@@ -71,7 +75,10 @@ def search_a_book():
             print('4. Trust by Hernan Diaz')
             print('5. Fluturi by Irina Binder')
             print('0. Exit')
-            abc = input('your choose of the book')
+
+
+
+            abc = input('your choiose of the book')
             if abc == 1:
                 print('Your option: \n White Fang: Myth of the White Wolf, cost:500')
             elif abc == 2:
@@ -90,6 +97,7 @@ def search_a_book():
             choosen_of_thebook = True
         search_a_book()
 
+
 def buy_a_book():
     print('First choose one of this avaible books =D')
     print('1. White Fang, cost:500')
@@ -105,6 +113,7 @@ def buy_a_book():
         person[person_index]['balance'] - 1099
     elif abcde1 == 4:
         person[person_index]['balance'] - 1209
+
 
 def view_a_book():
     print('1. White Fang')
@@ -132,10 +141,13 @@ def process_menu():
     inpp = int(input('choose one'))
     if inpp == 1:
         search_a_book()
+    elif inpp == 2:
+        buy_a_book()
     elif inpp == 3:
         process_view_balance()
     elif inpp == 4:
         view_a_book()
+
 
 while (cycle):
     if not is_logg_in:
