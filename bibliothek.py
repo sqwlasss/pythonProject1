@@ -16,7 +16,7 @@ book1 = {
             'Territory. The men, Bill and Henry, are stalked by a large pack of starving wolves over the course of several '
             'days. Finally, after all of their dogs and Bill have been eaten, more teams find Henry escaping from the wolves; '
             'the wolf pack scatters when they hear the large group of people coming.'}
-book2 = {'name': 'Harry Potter',
+book2 = {'name': 'Harry Potter 1',
          'author': 'British author J. K. Rowling',
          'amount':780,
          'desc': 'the novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron '
@@ -36,11 +36,19 @@ book4 = {
     'name': 'Twenty Thousand Leagues Under the Seas',
     'auth': 'Jules Verne',
     'amount': 1209,
-    'desc': 'During the year 1866, ships of various nationalities sight a mysterious sea monster, which, it is later suggested, might be a gigantic narwhal.  The U.S. government assembles an expedition in New York City to find and destroy the monster. Professor Pierre Aronnax, a French marine biologist and the storys narrator, is in town at the time and receives a last-minute invitation to join the expedition; he accepts. Canadian whaler and master harpooner Ned Land and Aronnaxs faithful manservant Conseil are also among the participants.'}
-book.append(book1)
-book.append(book2)
-book.append(book3)
-book.append(book4)
+    'desc': 'During the year 1866, ships of various nationalities sight a mysterious sea monster, which, it is later suggested, '
+            'might be a gigantic narwhal.  The U.S. government assembles an expedition in New York City to find and destroy '
+            'the monster. Professor Pierre Aronnax, a French marine biologist and the storys narrator, is in town at the time'
+            ' and receives a last-minute invitation to join the expedition; he accepts. Canadian whaler and master harpooner Ned '
+            'Land and Aronnaxs faithful manservant Conseil are also among the participants.'}
+book5 = {'name':'Harry Potter 2', 'desc':'some text blabla'}
+book6 = {'name':'Harry Potter 3', 'desc':'somesdfasdfasdfa'}
+book7 = {'name': 'ink heart 1', 'desc': 'tommorow'}
+book8 = {'name': 'ink heart 2', 'desc': 'not now'}
+# book.append(book1)
+# book.append(book2)
+# book.append(book3)
+# book.append(book4)
 cycle1 = True
 choosen_of_thebook = False
 
@@ -110,6 +118,7 @@ books = [name['name'] for name in book]
 #         search_a_book()
 
 def search_with_filter():
+    input('choose a filter')
     adc = 'Harry Potter'
     for l in book:
             if adc in l['name']:
@@ -120,22 +129,21 @@ def process_view_balance():
     print(f"Your balance is: {person[person_index]['balance']}")
 
 def buy_a_book():
-    global book_index
+    global person_index
     print('First choose one of this avaible books =D')
     print('1. White Fang, cost:500')
     print('2. Harry Potter, cost:780')
     print('3. William Wenton și Hoțul de Luridium, cost:1099')
     print('4. Twenty Thousand Leagues Under the Seas, cost:1209')
-    abcde1 = input('Choose a number 1-4 to buy that book: ')
-    if abcde1 == 1:
+    abcdee = input('Choose a number 1-4 to buy that book: ')
+    if abcdee == 1:
         person[person_index]['balance'] -= book1['amount']
-    elif abcde1 == 2:
+    elif abcdee == 2:
         person[person_index]['balance'] -= book2['amount']
-    elif abcde1 == 3:
+    elif abcdee == 3:
         person[person_index]['balance'] -= book3['amount']
-    elif abcde1 == 4:
+    elif abcdee == 4:
         person[person_index]['balance'] -= book4['amount']
-
 
 def view_a_book():
     print('1. White Fang')
