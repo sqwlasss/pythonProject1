@@ -121,8 +121,12 @@ def search_with_filter():
     input('choose a filter')
     adc = 'Harry Potter'
     for l in book:
-            if adc in l['name']:
-                print(l)
+        if adc in l['name']:
+            print(l)
+    adc1 = 'ink heart'
+    for k in book:
+        if adc1 in k['name']:
+            print(k)
 
 def process_view_balance():
     global person_index
@@ -137,13 +141,13 @@ def buy_a_book():
     print('4. Twenty Thousand Leagues Under the Seas, cost:1209')
     abcdee = input('Choose a number 1-4 to buy that book: ')
     if abcdee == 1:
-        person[person_index]['balance'] -= book1['amount']
+        person[person_index]['balance'] = person[person_index]['balance'] - book1['amount']
     elif abcdee == 2:
-        person[person_index]['balance'] -= book2['amount']
+        person[person_index]['balance'] = person[person_index]['balance'] - book2['amount']
     elif abcdee == 3:
-        person[person_index]['balance'] -= book3['amount']
+        person[person_index]['balance'] = person[person_index]['balance'] - book3['amount']
     elif abcdee == 4:
-        person[person_index]['balance'] -= book4['amount']
+        person[person_index]['balance'] = person[person_index]['balance'] - book4['amount']
 
 def view_a_book():
     print('1. White Fang')
