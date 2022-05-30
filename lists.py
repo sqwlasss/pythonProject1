@@ -17,5 +17,9 @@ list.append(book6)
 list.append(book7)
 
 b = 'Harry Potter'
+# for l in list:
+#     print(l['name'])
+
 for l in list:
-    print(l['name'])
+    if b in l['name']:
+        print(l)
