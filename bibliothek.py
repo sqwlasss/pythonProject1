@@ -148,54 +148,53 @@ def buy_a_book():
     money3 = 1209
     if abcdee == 1:
         print('warning you cant buy a book witch costs more than your balance')
-        x = person.get('balance')
-        if money > person['money']:
+        if money > person['balance']:
             print('you cant buy a book which costs more than your balance, exiting...')
             time.sleep(0.6)
             exit()
-        elif money <= person['money']:
+        elif money <= person['balance']:
             print('well, you can buy =D')
             time.sleep(0.9)
-            person["money"] = person["money"] - money
+            person['balance'] = person['balance'] - money
             time.sleep(1)
             print('succesefuly bought')
     elif abcdee == 2:
         print('warning you cant buy a book witch costs more than your balance')
         x = person.get('balance')
-        if money > person['money']:
+        if money1 > person['balance']:
             print('you cant buy a book which costs more than your balance, exiting...')
             time.sleep(0.6)
             exit()
-        elif money <= person['money']:
+        elif money1 <= person['balance']:
             print('well, you can buy =D')
             time.sleep(0.9)
-            person["money"] = person["money"] - money
+            person['balance'] = person['balance'] - money1
             time.sleep(1)
             print('succesefuly bought')
     elif abcdee == 3:
         print('warning you cant buy a book witch costs more than your balance')
         x = person.get('balance')
-        if money > person['money']:
+        if money2 > person['balance']:
             print('you cant buy a book which costs more than your balance, exiting...')
             time.sleep(0.6)
             exit()
-        elif money <= person['money']:
+        elif money2 <= person['balance']:
             print('well, you can buy =D')
             time.sleep(0.9)
-            person["money"] = person["money"] - money
+            person['balance'] = person['balance'] - money2
             time.sleep(1)
             print('succesefuly bought')
     elif abcdee == 4:
         print('warning you cant buy a book witch costs more than your balance')
         x = person.get('balance')
-        if money > person['money']:
+        if money3 > person['balance']:
             print('you cant buy a book which costs more than your balance, exiting...')
             time.sleep(0.6)
             exit()
-        elif money <= person['money']:
+        elif money3 <= person['balance']:
             print('well, you can buy =D')
             time.sleep(0.9)
-            person["money"] = person["money"] - money
+            person['balance'] = person['balance'] - money3
             time.sleep(1)
             print('succesefuly bought')
 
