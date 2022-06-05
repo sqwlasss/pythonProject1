@@ -1,4 +1,3 @@
-
 list = []
 book1 = {'name':'Harry Potter 1', 'content':'qwedsdcsdf text blabla'}
 book2 = {'name':'Harry Potter 2', 'content':'some text blabla'}

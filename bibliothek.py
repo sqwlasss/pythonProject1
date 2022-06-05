@@ -123,20 +123,14 @@ books = [name['name'] for name in book]
 
 def search_with_filter():
     y = input('choose a filter: ')
-    if y == 'Harry Potter':
-        for l in book:
-            if y in l['name']:
-                print(l)
-    if y == 'ink heart':
-        for k in book:
-            if y in k['name']:
-                print(k)
+    for h in book:
+        if y.lower() in h['name'].lower():
+            print(h)
 
 
 def process_view_balance():
     global person_index
     print(f"Your balance is: {person[person_index]['balance']}")
-
 
 def buy_a_book():
     global person_index
