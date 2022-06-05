@@ -2,7 +2,7 @@ import time
 
 person = []
 person_index = 0
-person.append({'email': 'scebec.cristian@gmail.com', 'pass': '123321', 'balance': '65000'})
+person.append({'email': 'scebec.cristian@gmail.com', 'pass': '123321', 'balance': '6000'})
 person.append({'email': 'mpakaboy@gmail.com', 'pass': 'idontknow', 'balance': '53400'})
 cycle = True
 is_logg_in = False
@@ -20,7 +20,7 @@ book1 = {
             'the wolf pack scatters when they hear the large group of people coming.'}
 book2 = {'name': 'Harry Potter 1',
          'author': 'British author J. K. Rowling',
-         'amount':780,
+         'amount': 780,
          'desc': 'the novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron '
                  'Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry. The main story arc concerns'
                  ' Harrys struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard '
@@ -29,7 +29,7 @@ book3 = {
     'name': 'William Wenton și Hoțul de Luridium',
     'author': 'Bobbie Peers',
     'amount': 1099,
-    'desc':'William s-a intrebat mereu de ce familia sa si-a schimbat in mod neasteptat numele si adresa in urma cu opt'
+    'desc': 'William s-a intrebat mereu de ce familia sa si-a schimbat in mod neasteptat numele si adresa in urma cu opt'
             ' ani, parasind Anglia pentru a se muta in Norvegia. Si ii e foarte dor de bunicul lui care a disparut in mod '
             'misterios chiar in aceeasi perioada. Abia dupa ce William reuseste sa decripteze Imposibilitatea, cel mai dificil '
             'cod din lume, isi da seama de pericolul care-l pandise din umbra in toti acesti ani. Pentru a supravietui, trebuie '
@@ -43,18 +43,21 @@ book4 = {
             'the monster. Professor Pierre Aronnax, a French marine biologist and the storys narrator, is in town at the time'
             ' and receives a last-minute invitation to join the expedition; he accepts. Canadian whaler and master harpooner Ned '
             'Land and Aronnaxs faithful manservant Conseil are also among the participants.'}
-book5 = {'name':'Harry Potter 2', 'desc':'some text blabla'}
-book6 = {'name':'Harry Potter 3', 'desc':'somesdfasdfasdfa'}
+book5 = {'name': 'Harry Potter 2', 'desc': 'some text blabla'}
+book6 = {'name': 'Harry Potter 3', 'desc': 'somesdfasdfasdfa'}
 book7 = {'name': 'ink heart 1', 'desc': 'tommorow'}
 book8 = {'name': 'ink heart 2', 'desc': 'not now'}
-# book.append(book1)
-# book.append(book2)
-# book.append(book3)
-# book.append(book4)
+book.append(book1)
+book.append(book2)
+book.append(book3)
+book.append(book4)
+book.append(book5)
+book.append(book6)
+book.append(book7)
+book.append(book8)
+
 cycle1 = True
 choosen_of_thebook = False
-
-
 
 personss = [name['email'] for name in person]
 
@@ -74,9 +77,6 @@ def loggin_in():
         print('wrong pass')
         loggin_in()
     is_logg_in = True
-
-
-
 
 
 books = [name['name'] for name in book]
@@ -120,19 +120,21 @@ books = [name['name'] for name in book]
 #         search_a_book()
 
 def search_with_filter():
-    input('choose a filter')
-    adc = 'Harry Potter'
-    for l in book:
-        if adc in l['name']:
-            print(l)
-    adc1 = 'ink heart'
-    for k in book:
-        if adc1 in k['name']:
-            print(k)
+    y = input('choose a filter: ')
+    if y == 'Harry Potter':
+        for l in book:
+            if y in l['name']:
+                print(l)
+    if y == 'ink heart':
+        for k in book:
+            if y in k['name']:
+                print(k)
+
 
 def process_view_balance():
     global person_index
     print(f"Your balance is: {person[person_index]['balance']}")
+
 
 def buy_a_book():
     # global person_index
@@ -198,6 +200,7 @@ def buy_a_book():
             time.sleep(1)
             print('succesefuly bought')
 
+
 def view_a_book():
     print('1. White Fang')
     print('2. Harry Potter')
@@ -222,7 +225,7 @@ def process_menu():
     print('3. View balance')
     print('4. View a book from current bibliothek')
     print('0. To exit')
-    inpp = int(input('Choose one: '))
+    inpp = int(input('Pick an option: '))
     if inpp == 1:
         search_with_filter()
     elif inpp == 2:
@@ -238,6 +241,6 @@ def process_menu():
 
 
 while (cycle):
-    if not is_logg_in:
-        loggin_in()
+    #     if not is_logg_in:
+    #         loggin_in()
     process_menu()
