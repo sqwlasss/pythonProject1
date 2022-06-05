@@ -2,8 +2,8 @@ import time
 
 person = []
 person_index = 0
-person.append({'email': 'scebec.cristian@gmail.com', 'pass': '123321', 'balance': '6000'})
-person.append({'email': 'mpakaboy@gmail.com', 'pass': 'idontknow', 'balance': '53400'})
+person.append({'email': 'scebec.cristian@gmail.com', 'pass': '123321', 'balance': 66000, 'index': 0})
+person.append({'email': 'mpakaboy@gmail.com', 'pass': 'idontknow', 'balance': 53400, 'index': 1})
 cycle = True
 is_logg_in = False
 
@@ -43,10 +43,10 @@ book4 = {
             'the monster. Professor Pierre Aronnax, a French marine biologist and the storys narrator, is in town at the time'
             ' and receives a last-minute invitation to join the expedition; he accepts. Canadian whaler and master harpooner Ned '
             'Land and Aronnaxs faithful manservant Conseil are also among the participants.'}
-book5 = {'name': 'Harry Potter 2', 'desc': 'some text blabla'}
-book6 = {'name': 'Harry Potter 3', 'desc': 'somesdfasdfasdfa'}
-book7 = {'name': 'ink heart 1', 'desc': 'tommorow'}
-book8 = {'name': 'ink heart 2', 'desc': 'not now'}
+book5 = {'name': 'Harry Potter 2', 'desc': 'some text blabla', 'amount':12344}
+book6 = {'name': 'Harry Potter 3', 'desc': 'somesdfasdfasdfa', 'amount':12234}
+book7 = {'name': 'ink heart 1', 'desc': 'tommorow', 'amount':12734}
+book8 = {'name': 'ink heart 2', 'desc': 'not now', 'amount':124}
 book.append(book1)
 book.append(book2)
 book.append(book3)
@@ -64,6 +64,7 @@ personss = [name['email'] for name in person]
 
 def loggin_in():
     global is_logg_in
+    global person_index
     username = input("Please enter your email: ")
     if not username in personss:
         print('Wrong email')
@@ -73,6 +74,7 @@ def loggin_in():
     for x in person:
         if username == x['email']:
             person_pass = x['pass']
+            person_index = x['index']
     if not passc == person_pass:
         print('wrong pass')
         loggin_in()
@@ -137,69 +139,13 @@ def process_view_balance():
 
 
 def buy_a_book():
-    # global person_index
-    print('First choose one of this avaible books =D')
-    print('1. White Fang, cost:500')
-    print('2. Harry Potter, cost:780')
-    print('3. William Wenton și Hoțul de Luridium, cost:1099')
-    print('4. Twenty Thousand Leagues Under the Seas, cost:1209')
-    abcdee = input('Choose a number 1-4 to buy that book: ')
-    money = 500
-    money1 = 780
-    money2 = 1099
-    money3 = 1209
-    if abcdee == 1:
-        print('warning you cant buy a book witch costs more than your balance')
-        if money > person['balance']:
-            print('you cant buy a book which costs more than your balance, exiting...')
-            time.sleep(0.6)
-            exit()
-        elif money <= person['balance']:
-            print('well, you can buy =D')
-            time.sleep(0.9)
-            person['balance'] = person['balance'] - money
-            time.sleep(1)
-            print('succesefuly bought')
-    elif abcdee == 2:
-        print('warning you cant buy a book witch costs more than your balance')
-        x = person.get('balance')
-        if money1 > person['balance']:
-            print('you cant buy a book which costs more than your balance, exiting...')
-            time.sleep(0.6)
-            exit()
-        elif money1 <= person['balance']:
-            print('well, you can buy =D')
-            time.sleep(0.9)
-            person['balance'] = person['balance'] - money1
-            time.sleep(1)
-            print('succesefuly bought')
-    elif abcdee == 3:
-        print('warning you cant buy a book witch costs more than your balance')
-        x = person.get('balance')
-        if money2 > person['balance']:
-            print('you cant buy a book which costs more than your balance, exiting...')
-            time.sleep(0.6)
-            exit()
-        elif money2 <= person['balance']:
-            print('well, you can buy =D')
-            time.sleep(0.9)
-            person['balance'] = person['balance'] - money2
-            time.sleep(1)
-            print('succesefuly bought')
-    elif abcdee == 4:
-        print('warning you cant buy a book witch costs more than your balance')
-        x = person.get('balance')
-        if money3 > person['balance']:
-            print('you cant buy a book which costs more than your balance, exiting...')
-            time.sleep(0.6)
-            exit()
-        elif money3 <= person['balance']:
-            print('well, you can buy =D')
-            time.sleep(0.9)
-            person['balance'] = person['balance'] - money3
-            time.sleep(1)
-            print('succesefuly bought')
-
+    global person_index
+    ind = 0
+    for b in book:
+        print(f"{ind}. {b['name']}, cost:{b['amount']}")
+        ind += 1
+    abcdee = int(input('Choose a number 1-4 to buy that book: '))
+    person[person_index]['balance'] = person[person_index]['balance'] - book[abcdee]['amount']
 
 def view_a_book():
     print('1. White Fang')
@@ -241,6 +187,6 @@ def process_menu():
 
 
 while (cycle):
-    #     if not is_logg_in:
-    #         loggin_in()
+    if not is_logg_in:
+        loggin_in()
     process_menu()
